@@ -1,5 +1,5 @@
 import { useRef, useId, useContext } from 'react'
-import { TaskContext } from '../hooks/useStore.jsx'
+import { TaskContext } from './useStore'
 
 export function FormList () {
   const inputid = useId()

@@ -1,5 +1,5 @@
 import { FormList } from './components/formlist'
-import { TaskProvider } from './hooks/useStore'
+import { TaskProvider } from './components/useStore'
 
 function App () {
   return (
