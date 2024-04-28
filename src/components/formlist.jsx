@@ -1,5 +1,6 @@
 import { useRef, useId, useContext } from 'react'
 import { TaskContext } from './useStore'
+import { Add } from './icons'
 
 export function FormList () {
   const inputid = useId()
@@ -17,6 +18,25 @@ export function FormList () {
         <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='p-2 outline-none rounded-md' />
         <button type='submit' className=' mt-2 self-end p-2 rounded-md bg-[--accent-200] text-white'>Agregar Lista</button>
       </div>
+    </form>
+  )
+}
+
+export function FormItem () {
+  const { add, list } = useContext(TaskContext)
+  const inputtwo = useRef()
+  const inputtwoid = useId()
+  const handleSubmit = event => {
+    event.preventDefault()
+    add({ task: inputtwo.current.value })
+    console.log(list)
+  }
+  return (
+    <form className='flex' onSubmit={handleSubmit}>
+      <input type='text' id={inputtwoid} ref={inputtwo} placeholder='hacer la compra, limpiar la casa, asignar proyecto..' className='p-2 rounded-s-md' />
+      <button className='bg-[--primary-200] text-white p-2 rounded-e-md'>
+        <Add />
+      </button>
     </form>
   )
 }

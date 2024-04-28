@@ -14,6 +14,16 @@ const reducer = (state, action) => {
         actionpayload
       ]
     }
+    case 'eliminarItem':{
+      return state.filter((value) => value.title !== actionpayload.title)
+    }
+    case 'cleanBoard':{
+      return initial
+    }
+    case 'addtask':{
+      const index = state.findIndex(value => value.title === actionpayload.title)
+      state[index].task.push(actionpayload.title)
+    }
   }
   return state
 }
@@ -24,9 +34,14 @@ export function TaskProvider ({ children }) {
     actiontype: 'addItem',
     actionpayload: producto
   })
+  const add = (producto) => dispatch({
+    actiontype: 'addtask',
+    actionpayload: producto
+  })
+
   return (
     <TaskContext.Provider value={
-     { list: state, agregar }
+     { list: state, agregar, add }
     }
     >
       {children}
