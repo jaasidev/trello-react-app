@@ -4,15 +4,14 @@ import { TaskContext } from './useStore'
 export function FormList () {
   const inputid = useId()
   const inputref = useRef()
-  const { state, agregar } = useContext(TaskContext)
+  const { agregar } = useContext(TaskContext)
   const handleSubmit = (event) => {
     event.preventDefault()
     if (inputref.current.value === '' || inputref.current.value === ' ') return null
     agregar({ title: inputref.current.value, task: [] })
-    console.log(state)
   }
   return (
-    <form className='-order-last card bg-[--bg-100]' onSubmit={handleSubmit}>
+    <form className='order-11 card bg-[--bg-100] max-h-48' onSubmit={handleSubmit}>
       <div className='card-body gap-1'>
         <label htmlFor={inputid}>Introduce el nombre para la lista</label>
         <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='p-2 outline-none rounded-md' />

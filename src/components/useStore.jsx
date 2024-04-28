@@ -26,7 +26,7 @@ export function TaskProvider ({ children }) {
   })
   return (
     <TaskContext.Provider value={
-     { state, agregar }
+     { list: state, agregar }
     }
     >
       {children}
