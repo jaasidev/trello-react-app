@@ -21,8 +21,7 @@ const reducer = (state, action) => {
       return initial
     }
     case 'addtask':{
-      const index = state.findIndex(value => value.title === actionpayload.title)
-      state[index].task.push(actionpayload.title)
+      const { id, tasks } = actionpayload
     }
   }
   return state

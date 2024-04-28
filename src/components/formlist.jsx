@@ -22,13 +22,13 @@ export function FormList () {
   )
 }
 
-export function FormItem () {
-  const { add, list } = useContext(TaskContext)
+export function FormItem ({ index }) {
+  const { list, add } = useContext(TaskContext)
   const inputtwo = useRef()
   const inputtwoid = useId()
   const handleSubmit = event => {
     event.preventDefault()
-    add({ task: inputtwo.current.value })
+    add({ id: index, tasks: { title: inputtwo.current.value, hasDone: false } })
     console.log(list)
   }
   return (
