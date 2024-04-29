@@ -22,6 +22,15 @@ const reducer = (state, action) => {
     }
     case 'addtask':{
       const { id, tasks } = actionpayload
+      const elemento = state[id]
+      const before = state[id].task
+      return [
+        {
+          ...elemento,
+          task: [...before, tasks]
+        },
+        ...state.filter((value) => value.title !== state[id].title)
+      ]
     }
   }
   return state
@@ -33,7 +42,7 @@ export function TaskProvider ({ children }) {
     actiontype: 'addItem',
     actionpayload: producto
   })
-  const add = (producto) => dispatch({
+  const add = producto => dispatch({
     actiontype: 'addtask',
     actionpayload: producto
   })
