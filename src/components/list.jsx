@@ -10,7 +10,7 @@ export function List ({ content, index }) {
     transition
   }
   return (
-    <div ref={setNodeRef} className='card bg-[--accent-100]' {...attributes} {...listeners} style={style}>
+    <div ref={setNodeRef} className='card bg-[--accent-100] touch-none' {...attributes} {...listeners} style={style}>
       {
         task.map((value, index) => {
           return (
