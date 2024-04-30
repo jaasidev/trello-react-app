@@ -1,13 +1,20 @@
+import { CSS } from '@dnd-kit/utilities'
 import { FormItem } from './formlist'
+import { useSortable } from '@dnd-kit/sortable'
 
 export function List ({ content, index }) {
-  const { title, task } = content
+  const { title, task, id } = content
+  const { attributes, setNodeRef, transform, transition, listeners } = useSortable({ id })
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition
+  }
   return (
-    <div className='card bg-[--accent-100]'>
+    <div ref={setNodeRef} className='card bg-[--accent-100]' {...attributes} {...listeners} style={style}>
       {
         task.map((value, index) => {
           return (
-            <span key={index}>{value.title}</span>
+            <span key={value.id}>{value.title}</span>
           )
         })
       }

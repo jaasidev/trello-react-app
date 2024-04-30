@@ -25,6 +25,9 @@ const reducer = (state, action) => {
       state[position].task.push(tasks)
       return [...state]
     }
+    case 'reordenar':{
+      return [...actionpayload]
+    }
   }
   return state
 }
@@ -39,10 +42,14 @@ export function TaskProvider ({ children }) {
     actiontype: 'addtask',
     actionpayload: producto
   })
+  const reordenamiento = producto => dispatch({
+    actiontype: 'reordenar',
+    actionpayload: producto
+  })
 
   return (
     <TaskContext.Provider value={
-     { list: state, agregar, add }
+     { list: state, agregar, add, reordenamiento }
     }
     >
       {children}
