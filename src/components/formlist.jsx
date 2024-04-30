@@ -29,6 +29,7 @@ export function FormItem ({ index }) {
   const inputtwoid = useId()
   const handleSubmit = event => {
     event.preventDefault()
+    if (inputtwo.current.value === '' || inputtwo.current.value === ' ') return null
     add({ position: index, tasks: { id: randomID(), title: inputtwo.current.value, hasDone: false } })
     console.log(list)
   }

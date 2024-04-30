@@ -15,7 +15,7 @@ const reducer = (state, action) => {
       ]
     }
     case 'eliminarItem':{
-      return state.filter((value) => value.title !== actionpayload.title)
+      return state.filter((value) => value.id !== actionpayload.id)
     }
     case 'cleanBoard':{
       return initial
