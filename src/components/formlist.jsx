@@ -1,6 +1,7 @@
 import { useRef, useId, useContext } from 'react'
 import { TaskContext } from './useStore'
 import { Add } from './icons'
+import { randomID } from '../js/random'
 
 export function FormList () {
   const inputid = useId()
@@ -9,7 +10,7 @@ export function FormList () {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (inputref.current.value === '' || inputref.current.value === ' ') return null
-    agregar({ title: inputref.current.value, task: [] })
+    agregar({ title: inputref.current.value, id: randomID(), task: [] })
   }
   return (
     <form className='order-11 card bg-[--bg-100] max-h-48' onSubmit={handleSubmit}>
@@ -28,7 +29,7 @@ export function FormItem ({ index }) {
   const inputtwoid = useId()
   const handleSubmit = event => {
     event.preventDefault()
-    add({ id: index, tasks: { title: inputtwo.current.value, hasDone: false } })
+    add({ position: index, tasks: { id: randomID(), title: inputtwo.current.value, hasDone: false } })
     console.log(list)
   }
   return (

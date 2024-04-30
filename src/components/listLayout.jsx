@@ -10,7 +10,7 @@ export function ListLayout () {
       {
     list.map((value, index) => {
       return (
-        <List key={index} content={value} index={index} />
+        <List key={value.id} content={value} index={index} />
       )
     })
   }

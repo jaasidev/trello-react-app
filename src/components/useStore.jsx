@@ -21,8 +21,8 @@ const reducer = (state, action) => {
       return initial
     }
     case 'addtask':{
-      const { id, tasks } = actionpayload
-      state[id].task.push(tasks)
+      const { position, tasks } = actionpayload
+      state[position].task.push(tasks)
       return [...state]
     }
   }
