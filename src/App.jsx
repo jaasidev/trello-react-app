@@ -6,7 +6,7 @@ function App () {
     <>
       <TaskProvider>
         <Header />
-        <div className='flex mt-3 p-5 min-h-full'>
+        <div className='flex mt-3 p-5 min-h-full gap-4'>
           <ListLayout />
         </div>
       </TaskProvider>

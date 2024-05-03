@@ -4,17 +4,22 @@ import { Add } from './icons'
 import { randomID } from '../js/random'
 import { useListForm } from '../hooks/useListForm'
 
-export function FormList ({ visible, update }) {
-  const { inputid, inputref, handleSubmit } = useListForm({ update })
-  const style = visible ? 'flex' : 'hidden'
+export function FormList () {
+  const { inputid, inputref, handleSubmit } = useListForm()
   return (
-    <form className={` ${style} items-center justify-center bg-[--bg-200] border border-[--bg-200] rounded-md fixed inset-0 m-auto h-[250px] w-96 shadow-screen z-40`} onSubmit={handleSubmit}>
-      <div className='flex-col p-3 flex gap-3'>
-        <label htmlFor={inputid} className='text-xl font-medium'>Introduce el nombre para la lista</label>
-        <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='input' />
-        <button type='submit' className=' mt-2 self-end p-2 rounded-md bg-[--accent-200] text-white'>Agregar Lista</button>
-      </div>
-    </form>
+    <dialog className='modal items-center' id='modal1'>
+      <form className='modal-box bg-[--bg-200] border border-[--bg-200] rounded-md fixed inset-0 m-auto h-[250px] w-96 shadow-screen z-40' onSubmit={handleSubmit}>
+        <div className='flex-col p-3 flex gap-2 justify-between self-center h-full'>
+          <form method='dialog'>
+            {/* if there is a button in form, it will close the modal */}
+            <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
+          </form>
+          <label htmlFor={inputid} className='text-xl font-medium'>Nueva Lista(s):</label>
+          <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='input mb-3' />
+          <button type='submit' className=' mt-2 self-end p-2 rounded-md bg-[--accent-200] text-white'>Agregar Lista</button>
+        </div>
+      </form>
+    </dialog>
   )
 }
 

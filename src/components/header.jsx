@@ -1,16 +1,12 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Add, Trash } from './icons'
 import { TaskContext } from './useStore'
 import { FormList } from './formlist'
 
 export function Header () {
   const { clean } = useContext(TaskContext)
-  const [ver, setVer] = useState(false)
   const handleClean = () => {
     clean()
-  }
-  const handlewatch = () => {
-    setVer(true)
   }
   return (
     <>
@@ -19,7 +15,7 @@ export function Header () {
           <h1 className='text-4xl font-semibold cursor-pointer'>
             JS
           </h1>
-          <button className='btn btn-square btn-ghost' onClick={handlewatch}>
+          <button className='btn btn-square btn-ghost' onClick={() => document.getElementById('modal1').showModal()}>
             <Add />
           </button>
         </div>
@@ -29,7 +25,7 @@ export function Header () {
           </button>
         </div>
       </header>
-      <FormList visible={ver} update={setVer} />
+      <FormList />
     </>
   )
 }

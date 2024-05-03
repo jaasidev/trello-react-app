@@ -1,6 +1,7 @@
 import { CSS } from '@dnd-kit/utilities'
 import { FormItem } from './formlist'
 import { useSortable } from '@dnd-kit/sortable'
+import { Task } from './task'
 
 export function List ({ content, index }) {
   const { title, task, id } = content
@@ -10,16 +11,17 @@ export function List ({ content, index }) {
     transition
   }
   return (
-    <div ref={setNodeRef} className='card bg-[--accent-100] touch-none' {...attributes} {...listeners} style={style}>
-      {
+    <div ref={setNodeRef} className='card bg-[--bg-200] touch-none' {...attributes} {...listeners} style={style}>
+      <div className='card-body'>
+        <h2 className='card-title text-2xl'>{title}</h2>
+        {
         task.map((value, index) => {
           return (
-            <span key={value.id}>{value.title}</span>
+            <Task key={value.id} title={value.title} />
           )
         })
       }
-      <div className='card-body'>
-        <h2 className='card-title'>{title}</h2>
+
         <FormItem index={index} />
       </div>
     </div>

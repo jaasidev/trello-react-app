@@ -4,5 +4,5 @@ export function randomID () {
     const elemento = Math.floor(Math.random() * 10)
     array.push(elemento)
   }
-  return Number(array.join(''))
+  return array.join('')
 }
