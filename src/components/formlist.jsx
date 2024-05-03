@@ -23,22 +23,40 @@ export function FormList () {
   )
 }
 
-export function FormItem ({ index }) {
-  const { list, add } = useContext(TaskContext)
+export function FormItem ({ index, visible, update }) {
+  const { add } = useContext(TaskContext)
   const inputtwo = useRef()
   const inputtwoid = useId()
-  const handleSubmit = event => {
-    event.preventDefault()
+  const select = useId()
+  const selectref = useRef()
+  const handleSubmit = (e) => {
+    e.preventDefault()
     if (inputtwo.current.value === '' || inputtwo.current.value === ' ') return null
-    add({ position: index, tasks: { id: randomID(), title: inputtwo.current.value, hasDone: false } })
-    console.log(list)
+    add({ position: index, tasks: { id: randomID(), title: inputtwo.current.value, hasDone: selectref.current.value } })
+    update(false)
   }
+  const card = visible ? 'flex' : 'hidden'
   return (
-    <form className=' flex' onSubmit={handleSubmit}>
-      <input type='text' id={inputtwoid} ref={inputtwo} placeholder='hacer la compra, limpiar la casa, asignar proyecto..' className='p-2 rounded-s-md' />
-      <button className='bg-[--primary-200] text-white p-2 rounded-e-md'>
-        <Add />
-      </button>
-    </form>
+    <div className={`${card} bg-black bg-opacity-30 fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-40`}>
+      <form className='shadow-screen fixed  inset-0 m-auto h-full w-96 bg-[--bg-100] rounded-md card-body gap-3 max-h-80 justify-center' onSubmit={handleSubmit}>
+        <label htmlFor={inputtwoid} className='text-xl'>Ingrese el nombre de la tarea:</label>
+        <input type='text' className='input border border-[--accent-100]' placeholder='Hacer la compra, asignar las actividades..' ref={inputtwo} id={inputtwoid} />
+        <div className='flex items-center gap-2 justify-center'>
+          <label htmlFor={select} className='text-xl'>Estado:</label>
+          <select id={select} ref={selectref} className='select text-md'>
+            <option disabled selected>Escoge el estado de la tarea</option>
+            <option value={false}>Proceso</option>
+            <option value>Hecha</option>
+            <option value={false}>Atrasada</option>
+          </select>
+        </div>
+        <div className='card-actions justify-end'>
+          <button className='btn bg-[--primary-200] text-white self-end'>
+            <Add width='15px' height='15px' />
+            Añadir
+          </button>
+        </div>
+      </form>
+    </div>
   )
 }

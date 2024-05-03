@@ -4,7 +4,7 @@ import { Trash } from './icons'
 export function Task ({ value }) {
   const { title, hasDone } = value
   return (
-    <div className='border-l-[--primary-200] border-l-[8px] flex flex-col bg-[--bg-300] card-compact card rounded-md'>
+    <div className='border-l-[--primary-200] border-l-[8px] flex flex-col bg-[--bg-300] card-compact card rounded-md w-full'>
       <div className='card-body'>
         <div>
           <h3 className='text-xl font-normal'><strong>Nombre:</strong> {title}</h3>
