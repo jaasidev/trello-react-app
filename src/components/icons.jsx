@@ -1,6 +1,6 @@
-export function Add () {
+export function Add ({ width, height }) {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-plus' width='44' height='44' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+    <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-plus' width={width} height={height} viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M12 5l0 14' />
       <path d='M5 12l14 0' />
@@ -8,9 +8,9 @@ export function Add () {
   )
 }
 
-export function Trash () {
+export function Trash ({ width, height }) {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-trash' width='44' height='44' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
+    <svg xmlns='http://www.w3.org/2000/svg' className='icon icon-tabler icon-tabler-trash' width={width} height={height} viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' fill='none' strokeLinecap='round' strokeLinejoin='round'>
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
       <path d='M4 7l16 0' />
       <path d='M10 11l0 6' />

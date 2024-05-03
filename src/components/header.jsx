@@ -16,12 +16,12 @@ export function Header () {
             JS
           </h1>
           <button className='btn btn-square btn-ghost' onClick={() => document.getElementById('modal1').showModal()}>
-            <Add />
+            <Add width='44' height='44' />
           </button>
         </div>
         <div className='flex flex-col items-center gap-2'>
           <button className='btn btn-square btn-ghost' onClick={handleClean}>
-            <Trash />
+            <Trash width='44' height='44' />
           </button>
         </div>
       </header>

@@ -8,7 +8,7 @@ export function FormList () {
   const { inputid, inputref, handleSubmit } = useListForm()
   return (
     <dialog className='modal items-center' id='modal1'>
-      <form className='modal-box bg-[--bg-200] border border-[--bg-200] rounded-md fixed inset-0 m-auto h-[250px] w-96 shadow-screen z-40' onSubmit={handleSubmit}>
+      <div className='modal-box bg-[--bg-200] border border-[--bg-200] rounded-md fixed inset-0 m-auto h-[250px] w-96 shadow-screen z-40'>
         <div className='flex-col p-3 flex gap-2 justify-between self-center h-full'>
           <form method='dialog'>
             {/* if there is a button in form, it will close the modal */}
@@ -16,9 +16,9 @@ export function FormList () {
           </form>
           <label htmlFor={inputid} className='text-xl font-medium'>Nueva Lista(s):</label>
           <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='input mb-3' />
-          <button type='submit' className=' mt-2 self-end p-2 rounded-md bg-[--accent-200] text-white'>Agregar Lista</button>
+          <button onClick={handleSubmit} className=' mt-2 self-end p-2 rounded-md bg-[--accent-200] text-white'>Agregar Lista</button>
         </div>
-      </form>
+      </div>
     </dialog>
   )
 }
