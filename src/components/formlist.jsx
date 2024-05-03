@@ -2,21 +2,16 @@ import { useRef, useId, useContext } from 'react'
 import { TaskContext } from './useStore'
 import { Add } from './icons'
 import { randomID } from '../js/random'
+import { useListForm } from '../hooks/useListForm'
 
-export function FormList () {
-  const inputid = useId()
-  const inputref = useRef()
-  const { agregar } = useContext(TaskContext)
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    if (inputref.current.value === '' || inputref.current.value === ' ') return null
-    agregar({ title: inputref.current.value, id: randomID(), task: [] })
-  }
+export function FormList ({ visible, update }) {
+  const { inputid, inputref, handleSubmit } = useListForm({ update })
+  const style = visible ? 'flex' : 'hidden'
   return (
-    <form className='order-11 card bg-[--bg-100] max-h-48' onSubmit={handleSubmit}>
-      <div className='card-body gap-1'>
-        <label htmlFor={inputid}>Introduce el nombre para la lista</label>
-        <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='p-2 outline-none rounded-md' />
+    <form className={` ${style} items-center justify-center bg-[--bg-200] border border-[--bg-200] rounded-md fixed inset-0 m-auto h-[250px] w-96 shadow-screen z-40`} onSubmit={handleSubmit}>
+      <div className='flex-col p-3 flex gap-3'>
+        <label htmlFor={inputid} className='text-xl font-medium'>Introduce el nombre para la lista</label>
+        <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='input' />
         <button type='submit' className=' mt-2 self-end p-2 rounded-md bg-[--accent-200] text-white'>Agregar Lista</button>
       </div>
     </form>
@@ -34,7 +29,7 @@ export function FormItem ({ index }) {
     console.log(list)
   }
   return (
-    <form className='flex' onSubmit={handleSubmit}>
+    <form className=' flex' onSubmit={handleSubmit}>
       <input type='text' id={inputtwoid} ref={inputtwo} placeholder='hacer la compra, limpiar la casa, asignar proyecto..' className='p-2 rounded-s-md' />
       <button className='bg-[--primary-200] text-white p-2 rounded-e-md'>
         <Add />

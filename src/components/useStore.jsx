@@ -46,10 +46,14 @@ export function TaskProvider ({ children }) {
     actiontype: 'reordenar',
     actionpayload: producto
   })
+  const clean = producto => dispatch({
+    actiontype: 'cleanBoard',
+    actionpayload: producto
+  })
 
   return (
     <TaskContext.Provider value={
-     { list: state, agregar, add, reordenamiento }
+     { list: state, agregar, add, reordenamiento, clean }
     }
     >
       {children}

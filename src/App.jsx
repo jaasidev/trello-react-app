@@ -1,12 +1,14 @@
-import { FormList } from './components/formlist'
 import { ListLayout } from './components/listLayout'
 import { TaskProvider } from './components/useStore'
+import { Header } from './components/header'
 function App () {
   return (
     <>
       <TaskProvider>
-        <ListLayout />
-        <FormList />
+        <Header />
+        <div className='flex mt-3 p-5 min-h-full'>
+          <ListLayout />
+        </div>
       </TaskProvider>
     </>
   )
