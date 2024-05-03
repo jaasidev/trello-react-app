@@ -11,7 +11,7 @@ export function List ({ content, index }) {
     transition
   }
   return (
-    <div ref={setNodeRef} className='card bg-[--bg-200] touch-none w-96 shadow-md' {...attributes} {...listeners} style={style}>
+    <div ref={setNodeRef} className='card bg-[--bg-200] touch-none w-96 shadow-md h-max' {...attributes} {...listeners} style={style}>
       <div className='card-body'>
         <h2 className='card-title text-3xl mb-4 border-b border-[--primary-100]'>{title}</h2>
         {
