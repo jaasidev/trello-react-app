@@ -13,9 +13,7 @@
     --bg-100:#F5F3F7;
     --bg-200:#E9E4ED;
     --bg-300:#FFFFFF;
+    aspect-ratio: var(--primary-200);
       
 }
 
-.shadow-screen{
-    box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .6);
-}

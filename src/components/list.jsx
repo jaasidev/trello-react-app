@@ -21,9 +21,9 @@ export function List ({ content, index }) {
             <h2 className='card-title text-3xl mb-4 border-b border-[--primary-100]'>{title}</h2>
             <div className='flex flex-col items-center gap-2'>
               {
-        task.map((value, index) => {
+        task.map((value, indexarr) => {
           return (
-            <Task key={value.id} value={value} />
+            <Task key={value.id} value={value} index={indexarr} parent={index} />
           )
         })
       }

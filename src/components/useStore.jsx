@@ -28,6 +28,11 @@ const reducer = (state, action) => {
     case 'reordenar':{
       return [...actionpayload]
     }
+    case 'completar tarea':{
+      const { padre, indice, nuevoResultado } = actionpayload
+      state[padre].task[indice].hasDone = nuevoResultado
+      return [...state]
+    }
   }
   return state
 }
@@ -50,10 +55,14 @@ export function TaskProvider ({ children }) {
     actiontype: 'cleanBoard',
     actionpayload: producto
   })
+  const change = producto => dispatch({
+    actiontype: 'completar tarea',
+    actionpayload: producto
+  })
 
   return (
     <TaskContext.Provider value={
-     { list: state, agregar, add, reordenamiento, clean }
+     { list: state, agregar, add, reordenamiento, clean, change }
     }
     >
       {children}
