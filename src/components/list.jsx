@@ -1,9 +1,9 @@
-import { CSS } from '@dnd-kit/utilities'
-import { useSortable } from '@dnd-kit/sortable'
 import { Task } from './task'
 import { Add } from './icons'
 import { FormItem } from './formitem'
 import { useState } from 'react'
+import { CSS } from '@dnd-kit/utilities'
+import { useSortable } from '@dnd-kit/sortable'
 
 export function List ({ content, index }) {
   const { title, task, id } = content
