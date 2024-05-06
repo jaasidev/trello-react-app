@@ -23,7 +23,7 @@ export function Lista ({ content, index }) {
   }
   return (
     <>
-      <div ref={setNodeRef} className=' touch-none z-0 md:h-full w-full md:auto ' {...attributes} style={style}>
+      <div ref={setNodeRef} className=' touch-none z-0 md:h-full w-full md:w-auto ' {...attributes} style={style}>
         <div className='card bg-[--bg-200] w-full md:w-96 shadow-md relative'>
           <div className='card-body h-min'>
             <h2 className='card-title text-3xl mb-4 border-b border-[--primary-100]'>{title}</h2>
