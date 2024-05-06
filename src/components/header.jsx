@@ -23,7 +23,7 @@ export function Header () {
           <button className='btn btn-square btn-ghost' onClick={handleClean}>
             <Trash width='44' height='44' />
           </button>
-          <button className='btn btn-square btn-ghost'>
+          <button className='btn btn-square btn-ghost' onClick={() => document.getElementById('my_modal_3').showModal()}>
             <AboutIco width='44' height='44' />
           </button>
         </div>

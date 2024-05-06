@@ -1,6 +1,7 @@
 import { ListLayout } from './components/listLayout'
 import { TaskProvider } from './components/useStore'
 import { Header } from './components/header'
+import { Footer } from './components/about'
 function App () {
   return (
     <>
@@ -10,6 +11,7 @@ function App () {
           <ListLayout />
         </div>
       </TaskProvider>
+      <Footer />
     </>
   )
 }
