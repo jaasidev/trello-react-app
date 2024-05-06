@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Add, Trash } from './icons'
+import { AboutIco, Add, Trash } from './icons'
 import { TaskContext } from './useStore'
 import { FormList } from './formlist'
 
@@ -22,6 +22,9 @@ export function Header () {
         <div className='flex flex-col items-center gap-2'>
           <button className='btn btn-square btn-ghost' onClick={handleClean}>
             <Trash width='44' height='44' />
+          </button>
+          <button className='btn btn-square btn-ghost'>
+            <AboutIco width='44' height='44' />
           </button>
         </div>
       </header>

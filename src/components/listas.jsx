@@ -1,12 +1,14 @@
 import { Task } from './task'
 import { Add, MoveIco, Trash } from './icons'
 import { FormItem } from './formitem'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { CSS } from '@dnd-kit/utilities'
 import { useSortable } from '@dnd-kit/sortable'
+import { TaskContext } from './useStore'
 
 export function Lista ({ content, index }) {
   const { title, task, id } = content
+  const { eliminarLista } = useContext(TaskContext)
   const { attributes, setNodeRef, transform, transition, listeners } = useSortable({ id })
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -15,6 +17,9 @@ export function Lista ({ content, index }) {
   const [form, setForm] = useState(false)
   const handleclick = () => {
     setForm(true)
+  }
+  const handleErase = () => {
+    eliminarLista(content)
   }
   return (
     <>
@@ -35,7 +40,7 @@ export function Lista ({ content, index }) {
           </div>
           <div className='absolute top-3 right-3 flex flex-col items-center justify-center gap-1'>
             <div {...listeners}><MoveIco width='20px' height='20px' /></div>
-            <button><Trash width='20px' height='20px' /></button>
+            <button onClick={handleErase}><Trash width='20px' height='20px' /></button>
           </div>
         </div>
       </div>

@@ -7,9 +7,12 @@ export function Task ({ value, index, parent }) {
   const { title, hasDone } = value
   const checkref = useRef()
   const checkid = useId()
-  const { change } = useContext(TaskContext)
+  const { change, eliminarTarea } = useContext(TaskContext)
   const handleChange = () => {
     change({ padre: parent, indice: index, nuevoResultado: checkref.current.checked })
+  }
+  const handleErase = () => {
+    eliminarTarea({ padre: parent, id: value.id })
   }
   return (
     <div className='border-l-[--primary-200] border-l-[8px] flex flex-col bg-[--bg-300] card-compact card rounded-md w-full'>
@@ -20,7 +23,7 @@ export function Task ({ value, index, parent }) {
         </div>
         <div className='flex items-center justify-between text-[--primary-200]'>
           <Badge finalizado={hasDone} />
-          <button className='w-10 h-10 flex items-center justify-end'>
+          <button className='w-10 h-10 flex items-center justify-end' onClick={handleErase}>
             <Trash width='30px' height='30px' />
           </button>
         </div>

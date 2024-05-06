@@ -33,6 +33,11 @@ const reducer = (state, action) => {
       state[padre].task[indice].hasDone = nuevoResultado
       return [...state]
     }
+    case 'eliminar tarea':{
+      const { padre, id } = actionpayload
+      state[padre].task = state[padre].task.filter((value) => value.id !== id)
+      return [...state]
+    }
   }
   return state
 }
@@ -59,10 +64,19 @@ export function TaskProvider ({ children }) {
     actiontype: 'completar tarea',
     actionpayload: producto
   })
+  const eliminarLista = producto => dispatch({
+    actiontype: 'eliminarItem',
+    actionpayload: producto
+  })
+
+  const eliminarTarea = producto => dispatch({
+    actiontype: 'eliminar tarea',
+    actionpayload: producto
+  })
 
   return (
     <TaskContext.Provider value={
-     { list: state, agregar, add, reordenamiento, clean, change }
+     { list: state, agregar, add, reordenamiento, clean, change, eliminarLista, eliminarTarea }
     }
     >
       {children}
