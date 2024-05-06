@@ -9,13 +9,14 @@ export function FormItem ({ index, visible, update }) {
         <label htmlFor={inputtwoid} className='text-xl font-medium'>Nombre de la tarea:</label>
         <input type='text' className='input border border-[--accent-100]' placeholder='Hacer la compra, asignar las actividades..' ref={inputtwo} id={inputtwoid} />
         <div className='card-actions justify-end'>
-          <button className='btn bg-[--primary-200] text-white self-end hover:text-[--text-100]'>
+          <button type='submit' className='btn bg-[--primary-200] text-white self-end hover:text-[--text-100]'>
             <Add width='15px' height='15px' />
             Añadir
           </button>
+          <button type='reset' className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2' onClick={() => { update(false) }}>✕</button>
         </div>
-        <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2' onClick={() => { update(false) }}>✕</button>
       </form>
+
     </div>
   )
 }
