@@ -23,8 +23,8 @@ export function Lista ({ content, index }) {
   }
   return (
     <>
-      <div ref={setNodeRef} className=' touch-none z-0 h-ful ' {...attributes} style={style}>
-        <div className='card bg-[--bg-200] w-96 shadow-md relative'>
+      <div ref={setNodeRef} className=' touch-none z-0 md:h-full w-full md:auto ' {...attributes} style={style}>
+        <div className='card bg-[--bg-200] w-full md:w-96 shadow-md relative'>
           <div className='card-body h-min'>
             <h2 className='card-title text-3xl mb-4 border-b border-[--primary-100]'>{title}</h2>
             <div className='flex flex-col items-center gap-2 z-20 pointer-events-auto'>
@@ -39,7 +39,7 @@ export function Lista ({ content, index }) {
             </button>
           </div>
           <div className='absolute top-3 right-3 flex flex-col items-center justify-center gap-1'>
-            <div {...listeners}><MoveIco width='20px' height='20px' /></div>
+            <div {...listeners} className='hidden md:block'><MoveIco width='20px' height='20px' /></div>
             <button onClick={handleErase}><Trash width='20px' height='20px' /></button>
           </div>
         </div>

@@ -6,7 +6,7 @@ export function Footer () {
           {/* if there is a button in form, it will close the modal */}
           <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
         </form>
-        <div className='card-body text-center text-xl'>
+        <div className='card-body text-center text-xl flex items-center justify-center'>
           <span>Hecho con ☕ desde Cuba.</span>
           <span>Jaasiel Beltrán.</span>
         </div>
