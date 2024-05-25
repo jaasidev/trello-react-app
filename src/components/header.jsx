@@ -17,13 +17,13 @@ export function Header () {
           </h1>
         </div>
         <div className='flex md:flex-col items-center gap-2 justify-end flex-1'>
-          <button className='btn btn-square btn-ghost ' onClick={() => document.getElementById('modal1').showModal()}>
+          <button aria-label='añadir una lista' className='btn btn-square btn-ghost ' onClick={() => document.getElementById('modal1').showModal()}>
             <Add width='44' height='44' />
           </button>
-          <button className='btn btn-square btn-ghost' onClick={handleClean}>
+          <button aria-label='eliminar toda la board' className='btn btn-square btn-ghost' onClick={handleClean}>
             <Trash width='44' height='44' />
           </button>
-          <button className='btn btn-square btn-ghost' onClick={() => document.getElementById('my_modal_3').showModal()}>
+          <button aria-label='acerca de la web' className='btn btn-square btn-ghost' onClick={() => document.getElementById('my_modal_3').showModal()}>
             <AboutIco width='44' height='44' />
           </button>
         </div>
