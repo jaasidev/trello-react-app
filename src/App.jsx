@@ -3,9 +3,11 @@ import { TaskProvider } from './components/useStore'
 import { Header } from './components/header'
 import { Footer } from './components/about'
 import { NoResponsive } from './components/Responsivemessage'
-function App() {
+import { Toaster } from 'sonner'
+function App () {
   return (
     <>
+      <Toaster richColors closeButton />
       <TaskProvider>
         <Header />
         <div className='flex mt-3 p-5 w-full md:min-h-full gap-4 flex-col md:flex-row overflow-y-scroll'>

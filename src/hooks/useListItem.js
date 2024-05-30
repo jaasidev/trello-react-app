@@ -1,6 +1,7 @@
 import { TaskContext } from '../components/useStore'
 import { useRef, useId, useContext } from 'react'
 import { randomID } from '../js/random'
+import { toast } from 'sonner'
 export function useListItem ({ index, update }) {
   const { add } = useContext(TaskContext)
   const inputtwo = useRef()
@@ -14,6 +15,7 @@ export function useListItem ({ index, update }) {
     })
     inputtwo.current.value = ''
     update(false)
+    toast.success('Tarea añadida')
   }
   return { inputtwo, inputtwoid, handleSubmit }
 }

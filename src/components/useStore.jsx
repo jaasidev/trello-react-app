@@ -1,4 +1,5 @@
 import { useReducer, createContext } from 'react'
+import { toast } from 'sonner'
 
 export const TaskContext = createContext()
 
@@ -18,6 +19,7 @@ const reducer = (state, action) => {
       return state.filter((value) => value.id !== actionpayload.id)
     }
     case 'cleanBoard':{
+      toast.error('Todas las listas han sido eliminadas correctamente')
       return initial
     }
     case 'addtask':{

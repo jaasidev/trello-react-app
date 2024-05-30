@@ -5,6 +5,7 @@ import { useState, useContext } from 'react'
 import { CSS } from '@dnd-kit/utilities'
 import { useSortable } from '@dnd-kit/sortable'
 import { TaskContext } from './useStore'
+import { toast } from 'sonner'
 
 export function Lista ({ content, index }) {
   const { title, task, id } = content
@@ -20,6 +21,7 @@ export function Lista ({ content, index }) {
   }
   const handleErase = () => {
     eliminarLista(content)
+    toast.error('Lista eliminada')
   }
   return (
     <>
