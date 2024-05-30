@@ -2,7 +2,8 @@ import { ListLayout } from './components/listLayout'
 import { TaskProvider } from './components/useStore'
 import { Header } from './components/header'
 import { Footer } from './components/about'
-function App () {
+import { NoResponsive } from './components/Responsivemessage'
+function App() {
   return (
     <>
       <TaskProvider>
@@ -11,6 +12,7 @@ function App () {
           <ListLayout />
         </div>
       </TaskProvider>
+      <NoResponsive />
       <Footer />
     </>
   )

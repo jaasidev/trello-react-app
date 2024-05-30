@@ -38,8 +38,10 @@ export function Lista ({ content, index }) {
               <Add width='30px' height='30px' />Añadir Tarea
             </button>
           </div>
-          <div className='absolute top-3 right-3 flex flex-col items-center justify-center gap-1'>
+          <div className='absolute top-3 left-3 flex flex-col items-center justify-center gap-1'>
             <div {...listeners} className='hidden md:block cursor-move'><MoveIco width='20px' height='20px' /></div>
+          </div>
+          <div className='absolute top-3 right-3 flex flex-col items-center justify-center gap-1'>
             <button onClick={handleErase}><Trash width='20px' height='20px' /></button>
           </div>
         </div>

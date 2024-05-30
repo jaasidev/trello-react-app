@@ -8,6 +8,7 @@ export function useListForm () {
   const handleSubmit = () => {
     if (inputref.current.value === '' || inputref.current.value === ' ') return null
     agregar({ title: inputref.current.value, id: randomID(), task: [] })
+    inputref.current.value = ''
   }
   return { inputid, inputref, handleSubmit }
 }
