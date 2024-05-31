@@ -11,7 +11,9 @@ export function FormList () {
           </form>
           <label htmlFor={inputid} className='text-xl font-medium'>Nueva Lista(s):</label>
           <input id={inputid} ref={inputref} type='text' placeholder='Mercado, Objetivos, Productos....' className='input mb-3' />
-          <button onClick={handleSubmit} className=' mt-2 self-end p-2 rounded-md bg-[--primary-100] text-white hover:bg-[--primary-200] transition-colors'>Agregar Lista</button>
+          <form method='dialog' className='flex items-center justify-end'>
+            <button onClick={handleSubmit} className=' mt-2 self-end p-2 rounded-md bg-[--primary-100] text-white hover:bg-[--primary-200] transition-colors'>Agregar Lista</button>
+          </form>
         </div>
       </div>
     </dialog>
