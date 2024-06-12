@@ -1,8 +1,5 @@
-# React + Vite
+# JasWeather
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma web hecha con react la cual brinda informacion actualizada de las estadisticas actuales del tiempo en cualquier parte del mundo.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Stack: React, TailwindCss, Zustand
