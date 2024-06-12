@@ -1,5 +1,5 @@
-# JasWeather
+# Jasboard
 
-Plataforma web hecha con react la cual brinda informacion actualizada de las estadisticas actuales del tiempo en cualquier parte del mundo.
+Herramienta Web para organizar tus pendientes en listas separadas a tu eleccion con una interfaz intuitiva.
 
-Stack: React, TailwindCss, Zustand
+Stack: React, TailwindCss, DaisyUI
