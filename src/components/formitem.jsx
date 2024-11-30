@@ -4,7 +4,7 @@ export function FormItem ({ index, visible, update }) {
   const { inputtwoid, inputtwo, handleSubmit } = useListItem({ index, update })
   const card = visible ? 'flex' : 'hidden'
   return (
-    <div className={`${card} card bg-black bg-opacity-30 fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-40 rounded-none`}>
+    <div className={`${card} card bg-black bg-opacity-45 w-screen h-screen fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-40 rounded-none`}>
       <form className='shadow-screen fixed  inset-0 m-auto h-full w-96 bg-[--bg-100] rounded-md card-body gap-3 max-h-64 justify-evenly' onSubmit={handleSubmit}>
         <div className='w-full flex flex-col  justify-center gap-3'>
           <label htmlFor={inputtwoid} className='text-xl font-medium'>Nombre de la tarea:</label>

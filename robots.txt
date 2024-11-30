@@ -1,0 +1,7 @@
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Applebot
+User-Agent: Bingbot
+
+Sitemap: https://jasweather.pages.dev/sitemap.xml
